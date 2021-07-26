@@ -23,13 +23,13 @@ A config.json file is required for the bot to run. An example is supplied in the
 - Usage: `>sitdown <user1> <user2> <user3>...`
 - Example: `>sitdown @TestUser#1234`
 
-## sitdownrelease
+### sitdownrelease
 - Removes the sit-down role from the mentioned users.
 - Requires `HELPER` role.
 - Usage: `>sitdownrelease <user1> <user2> <user3>...`
 - Example: `>sitdownrelease @TestUser#1234`
 
-## scoopnotification
+### scoopnotification
 - Notifies the `NEWSJUNKIE` role members in the `SCOOP` channel. Can only be used every hour.
 - Requires `RESEARCHER` role.
 - Usage: `>scoopnotification`
