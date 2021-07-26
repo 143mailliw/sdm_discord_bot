@@ -1,35 +1,35 @@
+# Steam Deck Bot
 Discord bot for Steam Deck Discord specific use.
 
- >reload cogs.<cogname> (i.e; >reload cogs.helper_role)
-Allows users with enough permissions to reload certain cogs for live testing/debug
+## Usage
+```
+pip install -r requirements.txt
+python bot.py
+```
 
- >sitdown @user1 @user2 etc
-Adds users to the sit-down role
+## Configuration
+A config.json file is required for the bot to run. An example is supplied in the `config.json.example` file.
 
- >sitdownrelease @user1 @user2 etc
-Removes users from the sit-down role
+## Commands
+### reload
+Allows live reloading of cogs. Useful for testing and debugging.
+Requires `BOT_DEV` role.
+Usage: `>reload cogs.<cogname>`
+Example: `>reload cogs.helper_role`
 
- >scoopnotification
-Allows users with enough permissions to notify News Junkies in the scoop channel.
+### sitdown
+Gives the mentioned users the sit-down role specified in the config.
+Requires `HELPER` role.
+Usage: `>sitdown <user1> <user2> <user3>...`
+Example: `>sitdown @TestUser#1234`
 
-  
-A config.json file is required for the bot to run. It looks like this;
-  {
-    "Discord": {
-        "API_KEY": "token key here",
-        "COMMAND_PREFIX" : ">",
-        
-        "Roles": {
-            "BOT_DEV" : 865684680195964998,
-            "HELPER": 866128683809767474,
-            "RESEARCHER": 867125502833852426,
-            "NEWSJUNKIE": 865654074274873374,
-            "SITDOWN": 866796838098042880
-        },
-        
-        "Channels" : {
-            "RESEARCH" : 867125657737232395,
-            "SCOOP" : 865802501470683186
-        }
-    }
-}
+## sitdownrelease
+Removes the sit-down role from the mentioned users.
+Requires `HELPER` role.
+Usage: `>sitdownrelease <user1> <user2> <user3>...`
+Example: `>sitdownrelease @TestUser#1234`
+
+## scoopnotification
+Notifies the `NEWSJUNKIE` role members in the `SCOOP` channel. Can only be used every hour.
+Requires `RESEARCHER` role.
+Usage: `>scoopnotification`
